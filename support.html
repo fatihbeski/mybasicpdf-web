@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Mybasic PDF App</title>
+    <!-- Google Fonts üzerinden Dosis yazı tipini çekiyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Gövde Ayarları */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dosis', sans-serif;
+            background-color: #FFFFFF;
+            color: #444;
+        }
+
+        /* Üst Bilgi (Header) Alanı - Sabit (Sticky) */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #F0F0F0;
+            z-index: 100;
+            height: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .headerTitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #011F53;
+            text-align: center;
+            margin: 0;
+        }
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #011F53;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 6px 12px 6px 8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: transparent;
+        }
+        .back-btn:hover {
+            background-color: rgba(1, 31, 83, 0.06);
+            color: #011F53;
+            text-decoration: none;
+            transform: translateX(-2px);
+        }
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2.5;
+            transition: transform 0.2s ease;
+        }
+        .back-btn:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Ana İçerik Alanı */
+        .scrollContent {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Giriş (Intro) Alanı */
+        .introSection {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 10px;
+        }
+        .introIcon {
+            font-size: 60px;
+            color: #011F53;
+            margin-bottom: 15px;
+        }
+        .introTitle {
+            font-size: 22px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .introSubTitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Bölümler (Sections) */
+        .section {
+            margin-bottom: 30px;
+        }
+        .sectionHeader {
+            font-size: 13px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 1.2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* SSS Öğesi (FAQ Item) */
+        .faqItem {
+            background-color: #F8FAFC;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #F1F5F9;
+        }
+        .questionText {
+            font-size: 15px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+        .answerText {
+            font-size: 14px;
+            font-weight: 400;
+            color: #475569;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Destek Kartı (Support Card) */
+        .supportCard {
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #F0F0F0;
+            text-decoration: none;
+            color: inherit;
+        }
+        .supportCard:hover {
+            background-color: #FAFAFA;
+        }
+        .cardIconContainer {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background-color: #F1F5F9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #011F53;
+        }
+        .cardTextContainer {
+            flex: 1;
+        }
+        .cardTitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E293B;
+            margin: 0 0 2px 0;
+        }
+        .cardSubTitle {
+            font-size: 12px;
+            font-weight: 400;
+            color: #64748B;
+            margin: 0;
+        }
+        .cardArrow {
+            font-size: 24px;
+            color: #CCC;
+        }
+
+        /* Alt Bilgi (Footer) */
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .footerText {
+            font-size: 12px;
+            font-weight: 400;
+            color: #94A3B8;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        
+        /* Linkleri uygulamanın ana rengine boyuyoruz */
+        a {
+            color: #011F53;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <a href="index.html" class="back-btn" aria-label="Back to home page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+            </a>
+            <div class="headerTitle">Help & Support</div>
+        </div>
+    </div>
+    
+    <div class="scrollContent">
+        <div class="introSection">
+            <!-- Icon placeholder -->
+            <div class="introIcon">❔</div>
+            <h1 class="introTitle">How can we help you?</h1>
+            <p class="introSubTitle">Check our frequently asked questions or reach out to us directly.</p>
+        </div>
+
+        <div class="section">
+            <div class="sectionHeader">FREQUENTLY ASKED QUESTIONS</div>
+            
+            <div class="faqItem">
+                <h3 class="questionText">Where are my documents stored?</h3>
+                <p class="answerText">All your documents are stored locally on your physical device. Mybasic PDF App does not use cloud servers, ensuring 100% privacy and data sovereignty.</p>
+            </div>
+            
+            <div class="faqItem">
+                <h3 class="questionText">How do I manage my subscription?</h3>
+                <p class="answerText">Subscriptions are managed entirely by Apple. You can cancel or change your plan in iOS Settings > Apple ID > Subscriptions.</p>
+            </div>
+            
+            <div class="faqItem">
+                <h3 class="questionText">Can I recover a deleted file?</h3>
+                <p class="answerText">No. Since your files are only stored on your device and never uploaded to our servers, once a file is deleted from the app, it is permanently removed.</p>
+            </div>
+
+            <div class="faqItem">
+                <h3 class="questionText">How to get the best scan quality?</h3>
+                <p class="answerText">For best results, place your document on a flat surface with high contrast background and ensure you have good, natural lighting.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="sectionHeader">STILL NEED HELP?</div>
+            
+            <a href="https://mybasicpdf.com" target="_blank" class="supportCard">
+                <div class="cardIconContainer">🌐</div>
+                <div class="cardTextContainer">
+                    <h3 class="cardTitle">Visit Website</h3>
+                    <p class="cardSubTitle">www.mybasicpdf.com</p>
+                </div>
+                <div class="cardArrow">›</div>
+            </a>
+            
+            <a href="mailto:support@mybasicpdf.com?subject=Mybasic PDF Support Request" class="supportCard">
+                <div class="cardIconContainer">📧</div>
+                <div class="cardTextContainer">
+                    <h3 class="cardTitle">Email Support</h3>
+                    <p class="cardSubTitle">support@mybasicpdf.com</p>
+                </div>
+                <div class="cardArrow">›</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p class="footerText">Mybasic PDF App - Version 1.0.0</p>
+            <p class="footerText">Developed with focus on your privacy.</p>
+        </div>
+    </div>
+</body>
+</html>

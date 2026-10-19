@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>MYbasic PDF — Simple, Fast, Secure iOS PDF Suite</title>
+    <meta name="description"
+        content="MYbasic PDF is the ultimate iOS PDF suite. Merge, split, scan and convert images to PDF — all locally on your device. 100% secure, zero cloud upload.">
+    <link rel="icon" type="image/svg+xml" href="assets/LOGO1.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app-root">
+
+        <!-- ═══════════════════════════════════════════
+             1. HEADER — Navy bar + layered logo
+        ═══════════════════════════════════════════ -->
+        <header class="app-header">
+            <div class="header-logo-wrap">
+                <img src="assets/LOGO1.svg" alt="" class="rect-43">
+
+            </div>
+        </header>
+
+        <!-- ═══════════════════════════════════════════
+             2. HERO — "PDFs, Made Simple" + Illustration + App Store
+        ═══════════════════════════════════════════ -->
+        <section class="hero-section">
+            <div class="made-simple-badge">
+                <span class="sparkle">✦</span>&nbsp;PDFs, Made Simple&nbsp;<span class="sparkle">✦</span>
+            </div>
+            <div class="hero-illustration-wrap">
+                <img src="assets/SAYFA-1-LL-STRASYON.svg" alt="PDFs Made Simple Illustration" class="hero-illustration">
+            </div>
+            <a href="#" id="hero-appstore-btn" class="appstore-btn" aria-label="Download on the App Store">
+                <div class="btn-apple-box">
+                    <img src="assets/Vector2.svg" alt="" class="apple-svg">
+                </div>
+                <div class="btn-text">
+                    <span class="btn-sub">Download on the</span>
+                    <span class="btn-main">App Store</span>
+                </div>
+            </a>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             3. SECURITY — "100% Secure" pill + LOCAL DATA
+        ═══════════════════════════════════════════ -->
+        <section class="security-section">
+            <div class="secure-badge" id="secure-badge-pill">
+                <span class="sparkle">✦</span>
+                100% Secure iOS PDF Suite
+            </div>
+            <div class="local-data-box">
+                <img src="assets/Group-75.svg" alt="Security shield" class="shield-icon">
+                <h2 class="local-data-title">LOCAL DATA</h2>
+                <p class="local-data-sub">Your files stay on your device</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             4 & 5. HEADLINE & PHONE SHOWCASE
+        ═══════════════════════════════════════════ -->
+        <section class="phone-showcase-section" id="phone-section" aria-label="App features and screenshot">
+            <!-- Background floating shapes (free, not constrained) -->
+            <div class="ellipse-circle-blue" aria-hidden="true"></div>
+            <div class="ellipse-circle-blue-sm" aria-hidden="true"></div>
+            <img src="assets/Ellipse-31.svg" alt="" class="ellipse-31" aria-hidden="true">
+            <img src="assets/Ellipse-30.svg" alt="" class="ellipse-30" aria-hidden="true">
+
+            <!-- Headline: "Simple, Fast, Done / 4 Basic Features" over the background circle -->
+            <div class="headline-wrap">
+                <h2 class="headline-title">Simple, Fast, Done</h2>
+                <h2 class="headline-sub">4 Basic Features</h2>
+            </div>
+
+            <!-- Centered Floating Phone with scroll-driven zoom -->
+            <div class="phone-img-wrap" id="zoom-phone-wrap">
+                <img src="assets/phone.png" alt="MYbasic PDF app screenshot" class="phone-img" id="zoom-phone-img">
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             6. FEATURE CARDS — 4 cards: PDF Merge, Split, Image to PDF, Scan to PDF
+             These are BELOW the phone, no overlap
+        ═══════════════════════════════════════════ -->
+        <section class="feature-cards-section" aria-label="App features">
+            <div class="cards-carousel-container" id="cards-carousel">
+                <button class="carousel-arrow carousel-arrow-prev" id="carousel-prev-btn" aria-label="Previous card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="cards-slider-track" id="cards-track">
+                    <!-- Slide 1: MERGE CARD -->
+                    <div class="card-slide active" data-index="0">
+                        <img src="assets/MERGE%20CARD.svg" alt="PDF Merge Feature" class="feature-svg-card"
+                            loading="lazy">
+                    </div>
+
+                    <!-- Slide 2: SPLIT CARD -->
+                    <div class="card-slide" data-index="1">
+                        <img src="assets/SPLIT%20CARD.svg" alt="PDF Split Feature" class="feature-svg-card"
+                            loading="lazy">
+                    </div>
+
+                    <!-- Slide 3: IMAGE TO PDF CARD -->
+                    <div class="card-slide" data-index="2">
+                        <img src="assets/IMAGE%20TO%20PDF%20CARD.svg" alt="Image to PDF Feature"
+                            class="feature-svg-card" loading="lazy">
+                    </div>
+
+                    <!-- Slide 4: SCAN CARD -->
+                    <div class="card-slide" data-index="3">
+                        <img src="assets/SCAN%20CARD.svg" alt="Scan to PDF Feature" class="feature-svg-card"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-next" id="carousel-next-btn" aria-label="Next card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 4 Dots Indicators -->
+            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Card navigation dots">
+                <button class="dot-btn active" data-index="0" role="tab" aria-selected="true"
+                    aria-label="Card 1: PDF Merge"></button>
+                <button class="dot-btn" data-index="1" role="tab" aria-selected="false"
+                    aria-label="Card 2: PDF Split"></button>
+                <button class="dot-btn" data-index="2" role="tab" aria-selected="false"
+                    aria-label="Card 3: Image to PDF"></button>
+                <button class="dot-btn" data-index="3" role="tab" aria-selected="false"
+                    aria-label="Card 4: Scan to PDF"></button>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             7. FEATURE LIST — PDF Merge / Split / Image to PDF / Scan to PDF
+        ═══════════════════════════════════════════ -->
+        <section class="feature-list-section">
+            <div class="feature-list-wrap">
+                <div class="feature-list-circle"></div>
+                <p class="feature-list-text">
+                    PDf Merge<br>
+                    PDF Split<br>
+                    Image to PDF<br>
+                    Scan to PDF
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             8. PILLARS — Fast / Basic / Secure
+        ═══════════════════════════════════════════ -->
+        <section class="pillars-section">
+            <div class="pillars-wrap">
+                <div class="pillar-row right">
+                    <img src="assets/Vector.svg" alt="" class="pillar-graphic" aria-hidden="true">
+                    <span class="pillar-text">Fast</span>
+                </div>
+                <div class="pillar-row left">
+                    <span class="pillar-text">Basic</span>
+                    <img src="assets/Group-74.svg" alt="" class="pillar-graphic shapes" aria-hidden="true">
+                </div>
+                <div class="pillar-row right">
+                    <img src="assets/Group-75.svg" alt="" class="pillar-graphic shield-check" aria-hidden="true">
+                    <span class="pillar-text">Secure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             9. POWER BARS — animated decorative chart
+        ═══════════════════════════════════════════ -->
+        <section class="power-bars-section" aria-hidden="true">
+            <div class="power-bars-inner">
+                <div class="bar-rect bar-orange"></div>
+                <div class="bar-rect bar-lightblue"></div>
+                <div class="bar-rect bar-navy"></div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             10. UNLOCK UNLIMITED POWER
+        ═══════════════════════════════════════════ -->
+        <section class="unlimited-section">
+            <h2 class="unlimited-title">
+                Unlock <span class="text-orange">Unlimited</span> Power
+            </h2>
+            <div class="infinity-wrap">
+                <img src="assets/Group-124.svg" alt="Infinity icon — unlimited operations" class="infinity-img">
+            </div>
+            <p class="unlimited-ops-label">Unlimited PDF Operations</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             11. PRICING CARDS
+        ═══════════════════════════════════════════ -->
+        <section class="pricing-section" aria-label="Pricing plans">
+
+            <!-- Yearly Plan (BEST VALUE) -->
+            <div class="plan-card" id="yearly-plan">
+                <div class="best-value-badge">BEST VALUE</div>
+                <div class="plan-card-body">
+                    <div class="plan-icon-wrap">
+                        <div class="plan-icon-box">
+                            <img src="assets/Icon.svg" alt="Diamond" class="diamond-icon">
+                        </div>
+                    </div>
+                    <div class="plan-info">
+                        <h3 class="plan-name">Yearly Plan</h3>
+                        <span class="plan-trial">3-Day Free Trial</span>
+                        <div class="plan-price"><b>$24.99</b><span> / year </span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Plan -->
+            <div class="plan-card" id="weekly-plan">
+                <div class="plan-card-body">
+                    <div class="plan-icon-wrap">
+                        <div class="plan-icon-box">
+                            <img src="assets/Icon.svg" alt="Diamond" class="diamond-icon">
+                        </div>
+                    </div>
+                    <div class="plan-info">
+                        <h3 class="plan-name">Weekly Plan</h3>
+                        <span class="plan-trial">3-Day Free Trial</span>
+                        <div class="plan-price"><b>$4.99</b><span> / week </span></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             12. CTA FLOW — CHOOSE / AND / DOWNLOAD + 5 Arrows & App Store
+        ═══════════════════════════════════════════ -->
+        <section class="cta-flow-section" aria-label="Call to action flow">
+            <!-- Row 1: CHOOSE + empty light blue block -->
+            <div class="cta-flow-row">
+                <div class="cta-pill-label navy-text">CHOOSE</div>
+                <div class="cta-pill-empty flex-grow"></div>
+            </div>
+
+            <!-- Row 2: AND + empty light blue long block -->
+            <div class="cta-flow-row">
+                <div class="cta-pill-label orange-text">AND</div>
+                <div class="cta-pill-empty flex-grow-long"></div>
+            </div>
+
+            <!-- Row 3: DOWNLOAD + orange block with white arrows (Figma exact) -->
+            <div class="cta-flow-row">
+                <div class="cta-pill-label navy-text">DOWNLOAD</div>
+                <div class="cta-orange-arrows-box" aria-hidden="true">
+                    <span class="cta-arrow-white"></span>
+                    <span class="cta-arrow-white"></span>
+                    <span class="cta-arrow-white"></span>
+                    <span class="cta-arrow-white"></span>
+                    <span class="cta-arrow-white"></span>
+                </div>
+            </div>
+
+            <!-- Row 4: 5 Navy Arrows + Dark Navy App Store Button (Figma exact) -->
+            <div class="cta-flow-row bottom-cta-row">
+                <div class="cta-arrows-box" aria-hidden="true">
+                    <span class="cta-arrow-triangle"></span>
+                    <span class="cta-arrow-triangle"></span>
+                    <span class="cta-arrow-triangle"></span>
+                    <span class="cta-arrow-triangle"></span>
+                    <span class="cta-arrow-triangle"></span>
+                </div>
+                <a href="#" id="cta-appstore-btn" class="cta-appstore-button navy-button"
+                    aria-label="Download on the App Store">
+                    <div class="cta-apple-icon-box white-icon">
+                        <img src="assets/Vector2.svg" alt="" aria-hidden="true">
+                    </div>
+                    <div class="cta-appstore-text">
+                        <span class="cta-appstore-sub">Download on the</span>
+                        <span class="cta-appstore-main">App Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Social Media Icons (Facebook, Instagram, TikTok, X — Figma exact) -->
+            <div class="social-icons-row" aria-label="Social media links">
+                <img src="assets/social_icons.svg" alt="Social Media: Facebook, Instagram, TikTok, X"
+                    class="social-icons-img">
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             13. FOOTER
+        ═══════════════════════════════════════════ -->
+        <footer class="app-footer" id="footer">
+            <div class="footer-bg-panel"></div>
+            <div class="footer-logo-wrap">
+                <img src="assets/LOGO.svg" alt="MYbasic PDF" class="footer-logo">
+            </div>
+            <nav class="footer-links-list" aria-label="Footer navigation">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="support.html">Support &amp; FAQ</a>
+            </nav>
+            <div class="footer-version">MYbasic PDF ver. 1.0.0</div>
+            <a href="#" id="footer-appstore-btn" class="footer-appstore-btn" aria-label="Download on the App Store">
+                <div class="footer-apple-box">
+                    <img src="assets/Vector2.svg" alt="">
+                </div>
+                <div class="footer-btn-text">
+                    <span class="footer-btn-sub">Download on the</span>
+                    <span class="footer-btn-main">App Store</span>
+                </div>
+            </a>
+        </footer>
+
+    </div><!-- /#app-root -->
+
+    <script>
+        // ── Intersection Observer: fade-up animations on scroll ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.plan-card, .unlimited-section, .cards-carousel-container').forEach(el => {
+            el.classList.add('will-animate');
+            observer.observe(el);
+        });
+
+        // ── Feature Cards Carousel Slider (Merge, Split, Image to PDF, Scan) ──
+        (function initCardsCarousel() {
+            const track = document.getElementById('cards-track');
+            const prevBtn = document.getElementById('carousel-prev-btn');
+            const nextBtn = document.getElementById('carousel-next-btn');
+            const dots = document.querySelectorAll('#carousel-dots .dot-btn');
+            const slides = document.querySelectorAll('.card-slide');
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+
+            function updateCarousel(index) {
+                if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+
+                // Slide track transition
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Active classes & accessibility
+                slides.forEach((slide, i) => {
+                    const isActive = (i === currentIndex);
+                    slide.classList.toggle('active', isActive);
+                });
+
+                dots.forEach((dot, i) => {
+                    const isActive = (i === currentIndex);
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    updateCarousel(currentIndex - 1);
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    updateCarousel(currentIndex + 1);
+                });
+            }
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    updateCarousel(i);
+                });
+            });
+
+            // Touch swipe support (Mobile friendly)
+            let startX = 0;
+            let isDragging = false;
+
+            const container = document.getElementById('cards-carousel');
+            if (container) {
+                container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                }, { passive: true });
+
+                container.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    if (Math.abs(diff) > 40) {
+                        if (diff > 0) {
+                            updateCarousel(currentIndex + 1);
+                        } else {
+                            updateCarousel(currentIndex - 1);
+                        }
+                    }
+                    isDragging = false;
+                }, { passive: true });
+            }
+
+            // Keyboard arrow support when focused
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    updateCarousel(currentIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    updateCarousel(currentIndex + 1);
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

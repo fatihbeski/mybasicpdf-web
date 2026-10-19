@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Mybasic PDF App</title>
+    <!-- Google Fonts üzerinden Dosis yazı tipini çekiyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Gövde Ayarları */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dosis', sans-serif;
+            background-color: #FFFFFF;
+            color: #444;
+        }
+
+        /* Üst Bilgi (Header) Alanı - Sabit (Sticky) */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #F0F0F0;
+            z-index: 100;
+            height: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .headerTitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #011F53;
+            text-align: center;
+            margin: 0;
+        }
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #011F53;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 6px 12px 6px 8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: transparent;
+        }
+        .back-btn:hover {
+            background-color: rgba(1, 31, 83, 0.06);
+            color: #011F53;
+            text-decoration: none;
+            transform: translateX(-2px);
+        }
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2.5;
+            transition: transform 0.2s ease;
+        }
+        .back-btn:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Ana İçerik Alanı */
+        .scrollContent {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Marka ve Tarih */
+        .brandName {
+            font-size: 22px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 2px;
+        }
+        .lastUpdated {
+            font-size: 13px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Ayırıcı Çizgi */
+        .divider {
+            height: 1px;
+            background-color: #EEE;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Vurgulu Kutucuk (Commitment Box) */
+        .commitmentBox {
+            background-color: #F4F7FC;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #011F53;
+            margin-bottom: 25px;
+        }
+        .commitmentTitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .commitmentText {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Bölümler (Sections) */
+        .section {
+            margin-bottom: 25px;
+        }
+        .sectionTitle {
+            font-size: 19px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #F0F0F0;
+            padding-bottom: 4px;
+            margin-top: 0;
+        }
+        .subSectionTitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #011F53;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        /* Standart Metinler */
+        .bodyText {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        .boldText {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* Madde İşaretli Listeler */
+        .listText {
+            font-size: 14px;
+            color: #444;
+            margin-left: 15px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        /* İletişim Kartı (Contact Card) */
+        .contactCard {
+            background-color: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        .contactText {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        .contactSubText {
+            font-size: 14px;
+            color: #011F53;
+            margin-top: 4px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        /* Linkleri uygulamanın ana rengine boyuyoruz */
+        a {
+            color: #011F53;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <a href="index.html" class="back-btn" aria-label="Back to home page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+            </a>
+            <div class="headerTitle">Terms of Use</div>
+        </div>
+    </div>
+    
+    <div class="scrollContent">
+        <div class="brandName">Mybasic PDF App</div>
+        <div class="lastUpdated">Last Updated: May 16, 2026</div>
+
+        <div class="divider"></div>
+
+        <p class="bodyText">
+            Welcome to Mybasic PDF App. Please read these Terms of Use ("Terms") carefully before using our mobile application (the "Service"). By downloading, installing, or using Mybasic PDF App, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use or download the application.
+        </p>
+
+        <div class="section">
+            <h2 class="sectionTitle">1. Acceptance of Terms</h2>
+            <p class="bodyText">
+                By accessing or using Mybasic PDF App, you confirm that you are at least 13 years of age (or the minimum legal age required in your country to consent to digital services) and that you legally agree to these Terms. If you are using the Service on behalf of a company or organization, you represent that you have the authority to bind them to these Terms.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">2. Description of Service</h2>
+            <p class="bodyText">
+                Mybasic PDF App is a mobile document utility application designed for iOS devices. The Service provides tools for:
+            </p>
+            <p class="listText">&bull; Scanning physical documents using your device's camera.</p>
+            <p class="listText">&bull; Converting images to PDF format.</p>
+            <p class="listText">&bull; Merging multiple PDF files into a single document.</p>
+            <p class="listText">&bull; Splitting existing PDF files into separate documents.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">3. Subscriptions and Billing (Apple App Store)</h2>
+            <p class="bodyText">
+                Mybasic PDF App offers certain enhanced features under a paid Premium Upgrade, available via Weekly or Yearly subscription plans.
+            </p>
+            
+            <div class="subSectionTitle">In-App Purchases</div>
+            <p class="bodyText">
+                All subscriptions and premium upgrades are processed exclusively through the Apple App Store via your Apple ID account. You agree to pay all applicable fees incurred, including any relevant taxes, as authorized by Apple.
+            </p>
+
+            <div class="subSectionTitle">Auto-Renewal</div>
+            <p class="bodyText">
+                Subscriptions automatically renew at the end of each billing period (weekly or yearly) at the then-current price, unless you cancel the subscription at least 24 hours before the end of the current cycle.
+            </p>
+
+            <div class="subSectionTitle">Cancellations</div>
+            <p class="bodyText">
+                You can manage or cancel your subscription at any time via your iOS device's Apple ID Subscriptions settings. If you cancel, your premium access will remain active until the end of your current paid billing period.
+            </p>
+
+            <div class="subSectionTitle">Refunds</div>
+            <p class="bodyText">
+                All financial transactions, billing disputes, and refund requests are handled exclusively by Apple Support and are subject to Apple’s standard App Store terms. We do not have the technical or legal capability to issue refunds directly to you.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">4. User Responsibilities & Content</h2>
+            <div class="commitmentBox">
+                <h3 class="commitmentTitle">Local Processing & Zero Cloud Storage</h3>
+                <p class="commitmentText">
+                    You acknowledge and agree that Mybasic PDF App operates on a local-first framework. All document processing, scanning, and file manipulation occur entirely on your physical device. We do not host, store, back up, or have access to any of your documents or files.
+                </p>
+            </div>
+            <p class="bodyText">
+                <span class="boldText">Data Backup:</span> Because your files are strictly stored locally, you are solely responsible for backing up your files using your personal cloud methods or external hard drives. We are not responsible for any data loss resulting from app updates, device loss, formatting, or damage.
+            </p>
+            <p class="bodyText">
+                <span class="boldText">Prohibited Uses:</span> You agree to use the application only for lawful purposes. You are strictly prohibited from using the app to scan, create, convert, or distribute:
+            </p>
+            <p class="listText">&bull; Fraudulent, counterfeit, forged, or stolen documents.</p>
+            <p class="listText">&bull; Materials that violate intellectual property rights, copyrights, or privacy rights of any third party.</p>
+            <p class="listText">&bull; Defamatory, obscene, or harmful content.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">5. Intellectual Property Rights</h2>
+            <div class="subSectionTitle">Our Intellectual Property</div>
+            <p class="bodyText">
+                All right, title, and interest in and to Mybasic PDF App—including the application design, source code, logos, user interfaces, visual design, and software—are and will remain the exclusive property of Mybasic PDF App and its licensors.
+            </p>
+            <div class="subSectionTitle">Your Content</div>
+            <p class="bodyText">
+                We claim no ownership rights over the documents, text, images, or data you scan, process, or generate within the app. You retain full ownership and intellectual property rights to your files.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">6. Warranty Disclaimer & Limitation of Liability</h2>
+            <div class="subSectionTitle">"As-Is" Provision</div>
+            <p class="bodyText">
+                Mybasic PDF App is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, either express or implied. We do not guarantee that the application will be uninterrupted, bug-free, or entirely error-free, or that document conversions will always meet your exact technical parameters.
+            </p>
+            <div class="subSectionTitle">Limitation of Liability</div>
+            <p class="bodyText">
+                To the maximum extent permitted by applicable law, in no event shall Mybasic PDF App, its developers, or its affiliates be liable for any indirect, incidental, special, consequential, or punitive damages. This includes, without limitation, loss of profits, data loss, device malfunction, file corruption, or other intangible losses resulting from:
+            </p>
+            <p class="listText">1. Your use of or inability to use the application.</p>
+            <p class="listText">2. Errors or inaccuracies within the document processing engine.</p>
+            <p class="listText">3. Any hardware damage or data loss on your iOS device.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">7. Privacy Policy Reference</h2>
+            <p class="bodyText">
+                Your privacy is fundamentally important to us. Our data handling practices are governed by our Privacy Policy, which details our local-first approach and our utilization of minimal, anonymous crash analytics. By agreeing to these Terms, you also acknowledge the terms of our Privacy Policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">8. Termination</h2>
+            <p class="bodyText">
+                We reserve the right to modify, suspend, or terminate the application, its services, or your access to specific features at any time, with or without notice, for any reason, including violation of these Terms.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">9. Governing Law</h2>
+            <p class="bodyText">
+                These Terms shall be governed by, construed, and enforced in accordance with the laws of your jurisdiction, without regard to its conflict of law principles. Any legal action arising out of these Terms must be filed in the competent courts of that jurisdiction.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">10. Contact Information</h2>
+            <p class="bodyText">
+                If you have questions, feedback, or legal inquiries regarding these Terms of Use, please reach out to us at:
+            </p>
+            <div class="contactCard">
+                <div class="contactText">Mybasic PDF App Support Team</div>
+                <div class="contactSubText">Email: <a href="mailto:support@mybasicpdf.com">support@mybasicpdf.com</a></div>
+                <div class="contactSubText">Website: <a href="https://mybasicpdf.com" target="_blank">https://mybasicpdf.com</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

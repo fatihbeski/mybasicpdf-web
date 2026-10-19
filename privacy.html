@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Mybasic PDF App</title>
+    <!-- Google Fonts üzerinden Dosis yazı tipini çekiyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Gövde Ayarları */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dosis', sans-serif;
+            background-color: #FFFFFF;
+            color: #444;
+        }
+
+        /* Üst Bilgi (Header) Alanı - Sabit (Sticky) */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #F0F0F0;
+            z-index: 100;
+            height: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .headerTitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #011F53;
+            text-align: center;
+            margin: 0;
+        }
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #011F53;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 6px 12px 6px 8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: transparent;
+        }
+        .back-btn:hover {
+            background-color: rgba(1, 31, 83, 0.06);
+            color: #011F53;
+            text-decoration: none;
+            transform: translateX(-2px);
+        }
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2.5;
+            transition: transform 0.2s ease;
+        }
+        .back-btn:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Ana İçerik Alanı */
+        .scrollContent {
+            padding: 20px;
+            max-width: 800px; /* Web'de rahat okunması için maksimum genişlik sınırı */
+            margin: 0 auto;
+        }
+
+        /* Marka ve Tarih */
+        .brandName {
+            font-size: 22px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 2px;
+        }
+        .lastUpdated {
+            font-size: 13px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Ayırıcı Çizgi */
+        .divider {
+            height: 1px;
+            background-color: #EEE;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Vurgulu Kutucuk (Commitment Box) */
+        .commitmentBox {
+            background-color: #F4F7FC;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #011F53;
+            margin-bottom: 25px;
+        }
+        .commitmentTitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #011F53;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .commitmentText {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Bölümler (Sections) */
+        .section {
+            margin-bottom: 25px;
+        }
+        .sectionTitle {
+            font-size: 19px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #F0F0F0;
+            padding-bottom: 4px;
+            margin-top: 0;
+        }
+        .subSectionTitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #011F53;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        /* Standart Metinler */
+        .bodyText {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        .boldText {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* Madde İşaretli Listeler */
+        .bulletItem {
+            display: flex;
+            margin-bottom: 10px;
+            padding-right: 10px;
+        }
+        .bullet {
+            font-size: 18px;
+            color: #011F53;
+            margin-right: 5px;
+        }
+        .bulletText {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .listText {
+            font-size: 14px;
+            color: #444;
+            margin-left: 15px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        /* İletişim Kartı (Contact Card) */
+        .contactCard {
+            background-color: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        .contactText {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        .contactSubText {
+            font-size: 14px;
+            color: #011F53;
+            margin-top: 4px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        /* Linkleri uygulamanın ana rengine boyuyoruz */
+        a {
+            color: #011F53;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <a href="index.html" class="back-btn" aria-label="Back to home page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+            </a>
+            <div class="headerTitle">Privacy Policy</div>
+        </div>
+    </div>
+    
+    <div class="scrollContent">
+        <div class="brandName">Mybasic PDF App</div>
+        <div class="lastUpdated">Last Updated: May 16, 2026</div>
+
+        <div class="divider"></div>
+
+        <div class="commitmentBox">
+            <h2 class="commitmentTitle">Core Privacy Commitment ("Local-First")</h2>
+            <p class="commitmentText">
+                <span class="boldText">Mybasic PDF App</span> is engineered on a strict <span class="boldText">local-first architecture</span>. All document processing, scanning, merging, splitting, and conversions occur entirely on your physical device. Your files, documents, and images are never uploaded to external servers, and we never have access to your data.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">1. Introduction</h2>
+            <p class="bodyText">
+                Welcome to <span class="boldText">Mybasic PDF App</span> ("we," "our," or "us"). We are committed to protecting your privacy and providing a transparent, secure environment for mobile document workflows. This Privacy Policy outlines our data handling practices when you use our mobile application.
+            </p>
+            <p class="bodyText">
+                By installing and using Mybasic PDF App, you agree to the practices described in this policy. If you do not agree with these terms, please do not use the application.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">2. Document Security & Local-First Processing</h2>
+            <p class="bodyText">
+                Unlike traditional cloud-based document utilities, <span class="boldText">Mybasic PDF App</span> prioritizes absolute data sovereignty.
+            </p>
+            <div class="bulletItem">
+                <div class="bullet">&bull;</div>
+                <div class="bulletText">
+                    <span class="boldText">Zero Server Uploads:</span> When you use the app to scan files using the camera, convert images, merge multiple files, or split paths, the computational workflow is executed entirely within your device's native hardware limits.
+                </div>
+            </div>
+            <div class="bulletItem">
+                <div class="bullet">&bull;</div>
+                <div class="bulletText">
+                    <span class="boldText">No Cloud Infrastructure:</span> We do not operate cloud servers to store, cache, or look at your files. Your documents remain under your complete physical and digital custody.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">3. Information Collection and Use</h2>
+            <p class="bodyText">
+                We practice strict data minimization. The app is built to be fully functional without collecting your personal information.
+            </p>
+
+            <div class="subSectionTitle">3.1 Personal Identification Data</div>
+            <p class="bodyText">
+                <span class="boldText">Mybasic PDF App</span> does <span class="boldText">not</span> require user registration, profiles, or account creation. We explicitly do <span class="boldText">not</span> collect, store, or transmit:
+            </p>
+            <p class="listText">&bull; Names, email addresses, or phone numbers.</p>
+            <p class="listText">&bull; Mailing addresses or contact lists.</p>
+
+            <div class="subSectionTitle">3.2 Payment and Subscription Data</div>
+            <p class="bodyText">
+                The app offers Premium subscriptions handled entirely through <span class="boldText">Apple App Store Commerce</span>. All transaction details, billing info, and credit card processing are securely managed directly by the App Store. We never see or store your financial payment tokens or credit card information.
+            </p>
+
+            <div class="subSectionTitle">3.3 Performance Analytics and Crash Reporting</div>
+            <p class="bodyText">
+                To maintain app stability and optimize performance, we integrate minimal, third-party diagnostic SDKs (such as Firebase Crashlytics or Sentry). These services collect strictly anonymous, aggregated technical metrics, including:
+            </p>
+            <p class="listText">&bull; Device hardware model and operating system version.</p>
+            <p class="listText">&bull; App crash logs and performance bottlenecks.</p>
+            <p class="listText">&bull; Timestamps of app anomalies.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">4. Device Permissions Required</h2>
+            <p class="bodyText">
+                To provide core document management functionalities, the app requires specific system permissions. You can adjust or revoke these permissions at any time via your iOS settings.
+            </p>
+            <div class="bulletItem">
+                <div class="bullet">&bull;</div>
+                <div class="bulletText">
+                    <span class="boldText">Camera Permission:</span> Used exclusively to capture physical documents using your device's camera module for our scanning engine. Captured images are strictly processed on-device and never shared.
+                </div>
+            </div>
+            <div class="bulletItem">
+                <div class="bullet">&bull;</div>
+                <div class="bulletText">
+                    <span class="boldText">Storage / Files Permission:</span> Used solely to let you import existing images or documents from your file systems, and to save newly generated PDFs back to your local drive.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">5. Regulatory Compliance & Global Standards</h2>
+            
+            <div class="subSectionTitle">5.1 GDPR Compliance</div>
+            <p class="bodyText">
+                Because <span class="boldText">Mybasic PDF App</span> does not process, store, or transmit personal data to our servers, we do not operate as a Data Controller or Data Processor under GDPR definitions. For anonymous diagnostics, our legitimate interest is app stability.
+            </p>
+
+            <div class="subSectionTitle">5.2 CCPA Compliance</div>
+            <p class="bodyText">
+                We do not "sell" or "share" your personal information. No user tracking profiles are built or traded.
+            </p>
+
+            <div class="subSectionTitle">5.3 Apple App Store Privacy Manifest</div>
+            <p class="bodyText">
+                In line with Apple's strict privacy rules, we certify that no data collected is linked to the user's identity, and diagnostic data is used purely for application optimization.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">6. Children's Privacy</h2>
+            <p class="bodyText">
+                Our application does not address anyone under the age of 13. Because we design our platform to bypass any collection of personally identifiable information, we do not knowingly track or store any information from children.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="sectionTitle">7. Contact Information</h2>
+            <p class="bodyText">
+                If you have any questions, compliance concerns, or feedback regarding our local data architecture, please contact us at:
+            </p>
+            <div class="contactCard">
+                <div class="contactText">Mybasic PDF App Support Team</div>
+                <div class="contactSubText">Email: <a href="mailto:support@mybasicpdf.com">support@mybasicpdf.com</a></div>
+                <div class="contactSubText">Support Portal: <a href="https://mybasicpdf.com" target="_blank">https://mybasicpdf.com</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

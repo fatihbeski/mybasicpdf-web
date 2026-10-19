@@ -1,0 +1,1299 @@
+/* ===================================================
+   MYbasic PDF — Pixel-Perfect Landing Page
+   Framer reference: https://lovable-globe-269634.framer.app/
+   Renk sistemi: navy=#011F53, orange=#FF9F00, light=#F0F4F8
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --navy: #011F53;
+    --orange: #FF9F00;
+    --light-bg: #F0F4F8;
+    --white: #FFFFFF;
+    --text-mid: rgba(32, 60, 108, 0.80);
+    --page-max: 430px;
+    --tr: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: #dde4ed;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* ─── Desktop wrapper ──────────────────────────────── */
+#app-root {
+    width: 100%;
+    max-width: var(--page-max);
+    background: var(--white);
+    position: relative;
+    box-shadow: 0 0 80px rgba(1, 31, 83, 0.2);
+    overflow-x: hidden;
+}
+
+@media (min-width: 900px) {
+    body {
+        background: linear-gradient(135deg, #d0d9e6 0%, #bfcfdf 100%);
+        align-items: flex-start;
+        padding: 40px 0 80px;
+    }
+
+    #app-root {
+        border-radius: 40px;
+        margin: 0 auto;
+    }
+}
+
+img {
+    display: block;
+}
+
+.sparkle {
+    font-style: normal;
+    color: var(--orange);
+}
+
+/* ═══════════════════════════════════════════════════
+   1. HEADER
+═══════════════════════════════════════════════════ */
+.app-header {
+    width: 100%;
+    height: 99px;
+    background: var(--navy);
+    display: flex;
+    align-items: flex-start;
+    padding: 25px 12px 11px;
+    z-index: 20;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.header-logo-wrap {
+    position: relative;
+    width: 68px;
+    height: 63px;
+    flex-shrink: 0;
+}
+
+.header-logo-wrap .rect-43 {
+    width: 68px;
+    height: 63px;
+}
+
+.header-logo-wrap .rect-41 {
+    position: absolute;
+    top: 16.9px;
+    left: 14.9px;
+    width: 40.7px;
+    height: 40.7px;
+}
+
+.header-logo-wrap .rect-411 {
+    position: absolute;
+    top: 5.8px;
+    left: 14.9px;
+    width: 28.5px;
+    height: 4.7px;
+}
+
+.header-logo-wrap .vec-11 {
+    position: absolute;
+    top: 5.8px;
+    left: 43px;
+    width: 12.5px;
+    height: 11.1px;
+}
+
+.header-logo-wrap .vec-12 {
+    position: absolute;
+    top: 6.4px;
+    left: 43px;
+    width: 13.1px;
+    height: 11.1px;
+}
+
+.header-logo-wrap .label-my {
+    position: absolute;
+    top: 13.4px;
+    left: 14.4px;
+    width: 15.2px;
+    height: 8.5px;
+}
+
+.header-logo-wrap .label-basic {
+    position: absolute;
+    top: 24.7px;
+    left: 14.4px;
+    width: 25.9px;
+    height: 8.9px;
+}
+
+.header-logo-wrap .label-pdf {
+    position: absolute;
+    top: 36.4px;
+    left: 14.2px;
+    width: 34.8px;
+    height: 14px;
+}
+
+/* ═══════════════════════════════════════════════════
+   2. HERO
+═══════════════════════════════════════════════════ */
+.hero-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 28px;
+    gap: 24px;
+    text-align: center;
+}
+
+.made-simple-badge {
+    width: 100%;
+    max-width: 340px;
+    height: 49px;
+    border-radius: 10px;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Dosis', sans-serif;
+}
+
+.hero-illustration-wrap {
+    width: 100%;
+    max-width: 308px;
+}
+
+.hero-illustration {
+    width: 100%;
+    height: auto;
+    max-height: 222px;
+    object-fit: contain;
+}
+
+/* App Store button */
+.appstore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 152px;
+    height: 57px;
+    border-radius: 7px;
+    background: var(--orange);
+    text-decoration: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform var(--tr), box-shadow var(--tr);
+    flex-shrink: 0;
+}
+
+.appstore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 159, 0, 0.4);
+}
+
+.btn-apple-box {
+    width: 42px;
+    height: 38px;
+    border-radius: 5px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-apple-box .apple-svg {
+    width: 90%;
+    height: auto;
+    max-height: 33px;
+    object-fit: contain;
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.btn-sub {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--light-bg);
+    line-height: 1.2;
+    font-family: 'Dosis', sans-serif;
+}
+
+.btn-main {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    margin-top: 2px;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════
+   3. SECURITY
+═══════════════════════════════════════════════════ */
+.security-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+    padding: 0 60px 32px;
+}
+
+.secure-badge {
+    width: 100%;
+    max-width: 320px;
+    height: 38px;
+    border-radius: 20px;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Dosis', sans-serif;
+}
+
+.local-data-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.shield-icon {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.local-data-title {
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+
+.local-data-sub {
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 26px;
+    font-family: Arial, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════
+   4 & 5. HEADLINE & PHONE SHOWCASE (Framer Unclipped Match)
+   — Organic background without artificial overflow clips
+   — Light gray circle positioned behind "Simple, Fast, Done"
+   — Yellow/orange curve flowing naturally around the phone
+═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════
+   4 & 5. HEADLINE & PHONE SHOWCASE (Smooth In-Place Scroll Zoom)
+   — Normal flow without giant white gaps
+   — Zooms smoothly from 0.75 to 1.25 as user scrolls it into view
+═══════════════════════════════════════════════════ */
+.phone-showcase-section {
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+/* Light circle behind "Simple, Fast, Done" text - positioned towards top-left like Framer */
+.ellipse-circle-blue {
+    position: absolute;
+    top: 0px;
+    left: 75px;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: #EBF2F7;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ellipse-circle-blue-sm {
+    position: absolute;
+    top: 170px;
+    right: -10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #EBF2F7;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Thick yellow/orange curve wrapping naturally from the left around the phone */
+.ellipse-31 {
+    position: absolute;
+    top: -10px;
+    left: -200px;
+    width: 290px;
+    height: 520px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+/* Thin yellow/orange arc on the right */
+.ellipse-30 {
+    position: absolute;
+    top: 250px;
+    right: -90px;
+    width: 220px;
+    height: 380px;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+}
+
+/* Headline sits above the background circle */
+.headline-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 16px 12px;
+    text-align: center;
+}
+
+.headline-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 44px;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.headline-sub {
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 44px;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* Sticky Zoom Track: provides the scroll distance for zooming without extra empty space */
+.phone-sticky-track {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    /* Exact controlled scroll track for zoom */
+}
+
+/* Sticky Window: keeps the phone centered in viewport while scrolling through the track */
+.phone-sticky-window {
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(50vh - 225px);
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Centered phone mockup with hardware acceleration */
+.phone-img-wrap {
+    position: relative;
+    width: 250px;
+    height: 440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.phone-img {
+    width: 150%;
+    height: 140%;
+    object-fit: contain;
+    transform: scale(0.75);
+    /* Starts at 0.75 */
+    transform-origin: center center;
+    will-change: transform;
+    filter: drop-shadow(0 20px 35px rgba(1, 31, 83, 0.22));
+}
+
+/* ═══════════════════════════════════════════════════
+   6. FEATURE CARDS CAROUSEL SLIDER (Merge, Split, Image to PDF, Scan)
+   Interactive slider with left/right arrows & 4 dots
+═══════════════════════════════════════════════════ */
+.feature-cards-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 16px;
+    position: relative;
+}
+
+.cards-carousel-container {
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(1, 31, 83, 0.08);
+}
+
+.cards-slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.card-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.feature-svg-card {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 361 / 331;
+    pointer-events: none;
+}
+
+/* Navigation Arrows (Left & Right) */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(1, 31, 83, 0.15);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 14px rgba(1, 31, 83, 0.18);
+    transition: all 0.22s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0;
+}
+
+.carousel-arrow:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 18px rgba(1, 31, 83, 0.28);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-prev {
+    left: 10px;
+}
+
+.carousel-arrow-next {
+    right: 10px;
+}
+
+/* 4 Dots Indicator (Social Media / Carousel style) */
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 4px 0;
+}
+
+.dot-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(1, 31, 83, 0.22);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dot-btn:hover {
+    background: rgba(1, 31, 83, 0.45);
+}
+
+.dot-btn.active {
+    width: 24px;
+    border-radius: 12px;
+    background: var(--navy);
+    box-shadow: 0 2px 8px rgba(1, 31, 83, 0.25);
+}
+
+/* Scroll-in animations */
+.will-animate {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.will-animate:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.will-animate:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.will-animate:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.will-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
+   7. FEATURE LIST (PDF Merge / Split / etc. big text)
+═══════════════════════════════════════════════════ */
+.feature-list-section {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 0 0;
+}
+
+.feature-list-wrap {
+    position: relative;
+    padding: 0 61px 36px;
+}
+
+.feature-list-circle {
+    position: absolute;
+    top: -23px;
+    left: -47px;
+    width: 146px;
+    height: 146px;
+    border-radius: 50%;
+    background: rgba(255, 159, 0, 1);
+}
+
+.feature-list-text {
+    font-size: 33px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 44px;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════
+   8. PILLARS — Fast / Basic / Secure
+═══════════════════════════════════════════════════ */
+.pillars-section {
+    width: 100%;
+    padding: 8px 0 32px;
+}
+
+.pillars-wrap {
+    width: 100%;
+    padding: 0 26px 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+}
+
+.pillar-row {
+    display: flex;
+    align-items: center;
+}
+
+.pillar-row.right {
+    justify-content: flex-end;
+}
+
+.pillar-row.left {
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.pillar-text {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.1em;
+    line-height: 44px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.pillar-graphic {
+    width: 136px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.pillar-graphic.shapes {
+    width: 50px;
+    height: 66px;
+}
+
+.pillar-graphic.shield-check {
+    width: 68px;
+    height: 62px;
+}
+
+/* ═══════════════════════════════════════════════════
+   9. POWER BARS
+═══════════════════════════════════════════════════ */
+.power-bars-section {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.power-bars-inner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 92px;
+}
+
+.bar-rect {
+    width: 33px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.bar-orange {
+    height: 152px;
+    background: var(--orange);
+}
+
+.bar-lightblue {
+    height: 168px;
+    background: var(--light-bg);
+
+}
+
+.bar-navy {
+    height: 206px;
+    background: var(--navy);
+}
+
+/* ═══════════════════════════════════════════════════
+   10. UNLIMITED
+═══════════════════════════════════════════════════ */
+.unlimited-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px 17px 24px;
+}
+
+.unlimited-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 42px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.unlimited-title .text-orange {
+    color: var(--orange);
+}
+
+.infinity-wrap {
+    width: 100%;
+    padding: 0 60px;
+}
+
+.infinity-img {
+    width: 100%;
+    height: 149px;
+    object-fit: contain;
+}
+
+.unlimited-ops-label {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--navy);
+    padding: 0 44px;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════
+   11. PRICING
+═══════════════════════════════════════════════════ */
+.pricing-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 0 12px 22px;
+}
+
+.plan-card {
+    width: 100%;
+    border-radius: 20px;
+    background: var(--light-bg);
+    border: 2px solid var(--navy);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 9px 9px;
+    gap: 23px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--tr), box-shadow var(--tr);
+}
+
+.plan-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(1, 31, 83, 0.12);
+}
+
+.best-value-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--orange);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 0 18px 0 10px;
+    z-index: 2;
+    min-width: 83px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.plan-card-body {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding-top: 5px;
+    flex: 1;
+}
+
+.plan-icon-wrap {
+    padding-bottom: 6px;
+    flex-shrink: 0;
+}
+
+.plan-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+}
+
+.diamond-icon {
+    width: 40px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5px;
+    flex: 1;
+}
+
+.plan-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Dosis', sans-serif;
+}
+
+.plan-trial {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--orange);
+    font-family: 'Dosis', sans-serif;
+}
+
+.plan-price {
+    font-size: 24px;
+    color: var(--navy);
+    font-family: Arial, sans-serif;
+    line-height: 24px;
+}
+
+.plan-price b {
+    font-weight: 700;
+}
+
+.plan-price span {
+    font-size: 15px;
+}
+
+.pricing-appstore-wrap {
+    padding: 0 104px;
+    width: 100%;
+}
+
+.appstore-btn-large {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8px;
+    width: 100%;
+    border-radius: 7px;
+    background: var(--orange);
+    padding: 10px 0.5px 9px 9px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform var(--tr), box-shadow var(--tr);
+}
+
+.appstore-btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 159, 0, 0.4);
+}
+
+.btn-large-apple-box {
+    width: 42px;
+    height: 38px;
+    border-radius: 5px;
+    background: var(--navy);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.btn-large-apple-box img {
+    position: absolute;
+    top: 2.5px;
+    left: calc(50% - 19.4px);
+    width: 38px;
+    height: 33px;
+}
+
+.btn-large-text {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.btn-large-sub {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    color: var(--light-bg);
+    width: 81px;
+    text-align: center;
+    display: block;
+}
+
+.btn-large-main {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    color: var(--navy);
+    padding-left: 3px;
+    margin-top: -6px;
+}
+
+/* ═══════════════════════════════════════════════════
+   12. CTA FLOW — CHOOSE / AND / DOWNLOAD + 5 Arrows & App Store (Photo 1)
+═══════════════════════════════════════════════════ */
+.cta-flow-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 12px 36px;
+    box-sizing: border-box;
+}
+
+.cta-flow-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.cta-pill-label {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background: #EDF3F8;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.cta-pill-label.navy-text {
+    color: var(--navy);
+}
+
+.cta-pill-label.orange-text {
+    color: var(--orange);
+    padding: 0 26px;
+}
+
+.cta-pill-empty {
+    min-height: 52px;
+    background: #EDF3F8;
+    border-radius: 8px;
+}
+
+.cta-pill-empty.flex-grow {
+    flex: 1;
+}
+
+.cta-pill-empty.flex-grow-long {
+    flex: 1;
+}
+
+/* Row 4: Arrows Box + App Store Button + Navy block */
+.bottom-cta-row {
+    margin-top: 4px;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.cta-arrows-box {
+    min-height: 52px;
+    background: #EDF3F8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 16px;
+    flex-shrink: 0;
+}
+
+.cta-arrow-triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 14px solid var(--navy);
+    display: inline-block;
+}
+
+.cta-appstore-button {
+    min-height: 52px;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    gap: 8px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: transform var(--tr), box-shadow var(--tr);
+}
+
+.cta-appstore-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 159, 0, 0.4);
+}
+
+.cta-apple-icon-box {
+    width: 34px;
+    height: 32px;
+    background: var(--navy);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-apple-icon-box img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.cta-appstore-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-appstore-sub {
+    font-size: 9px;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    color: var(--light-bg);
+    line-height: 11px;
+}
+
+.cta-appstore-main {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Dosis', sans-serif;
+    color: var(--navy);
+    line-height: 20px;
+}
+
+.cta-orange-arrows-box {
+    min-height: 52px;
+    flex: 1;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.cta-arrow-white {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 14px solid var(--white);
+    display: inline-block;
+}
+
+.cta-appstore-button.navy-button {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.cta-appstore-button.navy-button .cta-apple-icon-box {
+    background: transparent;
+}
+
+.cta-appstore-button.navy-button .cta-appstore-main {
+    color: var(--white);
+}
+
+.cta-appstore-button.navy-button .cta-appstore-sub {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Social media icons row */
+.social-icons-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0 8px;
+}
+
+.social-icons-img {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ═══════════════════════════════════════════════════
+   13. FOOTER
+═══════════════════════════════════════════════════ */
+.app-footer {
+    width: 100%;
+    height: 265px;
+    position: relative;
+    background: var(--light-bg);
+    overflow: hidden;
+}
+
+.footer-bg-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 397px;
+    height: 339px;
+    background: var(--light-bg);
+}
+
+.footer-logo-wrap {
+    position: absolute;
+    top: 29px;
+    right: 22px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 63px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.footer-links-list {
+    position: absolute;
+    top: 32px;
+    left: 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    z-index: 1;
+}
+
+.footer-links-list a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: underline;
+    letter-spacing: 0.1em;
+    line-height: 22px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    transition: opacity var(--tr);
+}
+
+.footer-links-list a:hover {
+    opacity: 0.6;
+}
+
+.footer-version {
+    position: absolute;
+    bottom: 36px;
+    left: 81px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: rgba(1, 31, 83, 0.3);
+    z-index: 1;
+}
+
+.footer-appstore-btn {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    width: 120px;
+    border-radius: 7px;
+    background: var(--white);
+    display: flex;
+    align-items: flex-end;
+    padding: 5.4px 2px 2px 6px;
+    gap: 4px;
+    z-index: 1;
+    text-decoration: none;
+    transition: transform var(--tr);
+}
+
+.footer-appstore-btn:hover {
+    transform: translateY(-2px);
+}
+
+.footer-apple-box {
+    width: 35px;
+    height: 32px;
+    border-radius: 5px;
+    background: var(--navy);
+    position: relative;
+    flex-shrink: 0;
+    margin-bottom: 2.8px;
+}
+
+.footer-apple-box img {
+    position: absolute;
+    top: 2.1px;
+    left: calc(50% - 16.25px);
+    width: 31.8px;
+    height: 27.6px;
+}
+
+.footer-btn-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: -2.8px;
+}
+
+.footer-btn-sub {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--navy);
+    font-family: 'Dosis', sans-serif;
+    display: block;
+}
+
+.footer-btn-main {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    color: var(--navy);
+    line-height: 25px;
+    height: 25px;
+    min-width: 62px;
+    padding-left: 0px;
+    margin-top: -5.7px;
+    display: flex;
+    align-items: center;
+}
