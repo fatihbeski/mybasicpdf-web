@@ -201,8 +201,8 @@ img {
     gap: 8px;
     width: 152px;
     height: 57px;
-    border-radius: 7px;
-    background: var(--orange);
+    border-radius: 13px;
+    background: black;
     text-decoration: none;
     padding: 8px;
     cursor: pointer;
@@ -212,14 +212,14 @@ img {
 
 .appstore-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 159, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-apple-box {
     width: 42px;
     height: 38px;
     border-radius: 5px;
-    background: var(--navy);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -243,18 +243,21 @@ img {
 .btn-sub {
     font-size: 10px;
     font-weight: 700;
-    color: var(--light-bg);
+    color: white;
     line-height: 1.2;
-    font-family: 'Dosis', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
 }
 
 .btn-main {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
-    color: var(--navy);
+    color: white;
     line-height: 1;
     margin-top: 2px;
-    font-family: 'Dosis', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -748,12 +751,14 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     padding: 24px 17px 24px;
 }
 
 .unlimited-title {
+    width: 100%;
+    text-align: center;
     font-size: 40px;
     font-weight: 700;
     color: var(--navy);
@@ -777,10 +782,12 @@ img {
 }
 
 .unlimited-ops-label {
+    width: 100%;
+    text-align: center;
     font-size: 23px;
     font-weight: 700;
     color: var(--navy);
-    padding: 0 44px;
+    padding: 0;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -1093,16 +1100,16 @@ img {
 
 .cta-appstore-sub {
     font-size: 9px;
-    font-weight: 700;
-    font-family: 'Dosis', sans-serif;
-    color: var(--light-bg);
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: white;
     line-height: 11px;
 }
 
 .cta-appstore-main {
     font-size: 18px;
-    font-weight: 800;
-    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--navy);
     line-height: 20px;
 }
@@ -1111,7 +1118,7 @@ img {
     min-height: 52px;
     flex: 1;
     background: var(--orange);
-    border-radius: 8px;
+    border-radius: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1129,7 +1136,7 @@ img {
 }
 
 .cta-appstore-button.navy-button {
-    background: var(--navy);
+    background: black;
     color: var(--white);
 }
 
@@ -1148,7 +1155,7 @@ img {
 /* Social media icons row */
 .social-icons-row {
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 24px 0 8px;
